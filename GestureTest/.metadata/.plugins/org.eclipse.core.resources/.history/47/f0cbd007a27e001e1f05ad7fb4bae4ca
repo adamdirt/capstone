@@ -1,0 +1,44 @@
+/*
+ * tof_lib.c
+ *
+ *  Created on: Nov 7, 2023
+ *      Author: adam
+ */
+
+#include "tof_lib.h"
+
+uint8_t init_tof(VL53L5CX_Configuration	*config){
+	uint8_t status = VL53L5CX_STATUS_OK;
+	status |= vl53l5cx_init(config);
+	HAL_Delay(1000);
+	//@todo more initialization
+
+
+	return status;
+}
+
+
+uint8_t sample_once(VL53L5CX_Configuration* config, VL53L5CX_ResultsData* results){
+	uint8_t status = VL53L5CX_STATUS_OK;
+	uint8_t is_ready = 0;
+
+	while(is_ready == 0){ // poll ;)
+		status |= vl53l5cx_check_data_ready(config, &is_ready);
+	}
+	vl53l5cx_get_ranging_data(config, results);
+
+	return status;
+}
+
+uint8_t detect_motion(VL53L5CX_ResultsData *results){
+	uint8_t i;
+	uint8_t cur_motion;
+	uint8_t frame_has_motion = 0;
+
+	for (i = 0; i < 32; i++){
+		cur_motion = Sensor1Results.motion_indicator.motion[i];
+		frame_has_motion |= (cur_motion < 500 && cur_motion > 100);
+	}
+
+	return frame_has_motion;
+}

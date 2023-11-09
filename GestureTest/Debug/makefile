@@ -60,8 +60,8 @@ all: main-build
 main-build: GestureTest.elf secondary-outputs
 
 # Tool invocations
-GestureTest.elf GestureTest.map: $(OBJS) $(USER_OBJS) C:\Users\zbelk\STM32CubeIDE\workspace_1.13.2\GestureTest\STM32G071RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "GestureTest.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\zbelk\STM32CubeIDE\workspace_1.13.2\GestureTest\STM32G071RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GestureTest.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+GestureTest.elf GestureTest.map: $(OBJS) $(USER_OBJS) fail-specified-linker-script-missing makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	$(error unable to generate command line)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

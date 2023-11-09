@@ -1,4 +1,6 @@
 Core/Src/system_stm32g0xx.o: ../Core/Src/system_stm32g0xx.c \
+ ../Platform/platform.h ../VL53L5CX_ULD_API/inc/vl53l5cx_api.h \
+ ../VL53L5CX_ULD_API/inc/vl53l5cx_buffers.h \
  ../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g0xx.h \
  ../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g071xx.h \
  ../Drivers/CMSIS/Include/core_cm0plus.h \
@@ -30,6 +32,9 @@ Core/Src/system_stm32g0xx.o: ../Core/Src/system_stm32g0xx.c \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr_ex.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h
+../Platform/platform.h:
+../VL53L5CX_ULD_API/inc/vl53l5cx_api.h:
+../VL53L5CX_ULD_API/inc/vl53l5cx_buffers.h:
 ../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g0xx.h:
 ../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g071xx.h:
 ../Drivers/CMSIS/Include/core_cm0plus.h:

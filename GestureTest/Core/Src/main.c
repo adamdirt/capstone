@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "vl53l5cx_api.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -42,12 +41,13 @@
 
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
-VL53L5CX_Platform Sensor1;
-VL53L5CX_Configuration Sensor1Cfg;
-uint8_t is_alive;
+
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+//VL53L5CX_Platform Sensor1;
+VL53L5CX_Configuration Sensor1Cfg;
+uint8_t is_alive;
 
 /* USER CODE END PV */
 
@@ -73,8 +73,7 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	is_alive = 0;
-	Sensor1->address = 0x52;
-	Sensor1Cfg->platform = Sensor1;
+	Sensor1Cfg.platform.address = 0x52;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -99,7 +98,11 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
+  HAL_GPIO_WritePin(GPIOB, I2C_RST_Pin, GPIO_PIN_RESET);
+  HAL_Delay(100);
 
+  vl53l5cx_init(&Sensor1Cfg);
+  HAL_Delay(1000);
 
   /* USER CODE END 2 */
 
@@ -107,13 +110,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
 	  HAL_GPIO_TogglePin(GPIOA,LED_GREEN_Pin);
 	  HAL_Delay(100);
-	  if (vl53l5cx_is_alive(*Sensor1Cfg,*is_alive) == 0){
+	  vl53l5cx_is_alive(&Sensor1Cfg, &is_alive);
+	  if (is_alive == 0){
 		  HAL_GPIO_WritePin(GPIOA,LED_GREEN_Pin,GPIO_PIN_SET);
 		  while(1){}
 	  }
+
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -276,6 +282,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(I2C_RST_GPIO_Port, I2C_RST_Pin, GPIO_PIN_RESET);
+
   /*Configure GPIO pins : PC11 PC12 PC0 PC1
                            PC2 PC3 PC4 PC5
                            PC6 PC7 PC8 PC9
@@ -314,11 +323,11 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pins : PB0 PB1 PB2 PB10
                            PB11 PB12 PB13 PB14
                            PB15 PB3 PB4 PB5
-                           PB6 PB7 */
+                           PB6 */
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_10
                           |GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14
                           |GPIO_PIN_15|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5
-                          |GPIO_PIN_6|GPIO_PIN_7;
+                          |GPIO_PIN_6;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -332,6 +341,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : I2C_RST_Pin */
+  GPIO_InitStruct.Pin = I2C_RST_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(I2C_RST_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
