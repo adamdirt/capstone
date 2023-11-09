@@ -1,0 +1,24 @@
+/*
+ * tof_lib.h
+ *
+ *  Created on: Nov 7, 2023
+ *      Author: adam
+ */
+
+#ifndef INC_TOF_LIB_H_
+#define INC_TOF_LIB_H_
+
+#include "vl53l5cx_api.h"
+
+/*
+ * @brief Initialize the vl53l5cx sensor and required peripherals.
+ */
+uint8_t init_tof(VL53L5CX_Configuration	*config);
+
+/*
+ * @brief With given sensor configuration and sensor results
+ */
+uint8_t get_n_samples(VL53L5CX_Configuration *config, VL53L5CX_ResultsData *results, uint8_t samples);
+
+
+#endif /* INC_TOF_LIB_H_ */

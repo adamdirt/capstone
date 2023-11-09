@@ -1,0 +1,66 @@
+!SESSION 2023-11-07 16:43:57.163 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-07 16:44:05.000
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-07 16:44:05.001
+!MESSAGE Log4j2 initialized with config file /home/adam/Documents/capstone/CaptstoneRepo/capstone/GestureTest/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-07 16:44:07.224
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-07 16:46:34.930
+!MESSAGE Indexed 'GestureTest2' (31 sources, 129 headers) in 3.96 sec: 13,361 declarations; 61,347 references; 3 unresolved inclusions; 26 syntax errors; 171 unresolved names (0.23%)
+
+!ENTRY org.eclipse.cdt.ui 4 0 2023-11-07 16:56:46.921
+!MESSAGE Cannot work without declarator
+!SESSION 2023-11-08 18:21:56.590 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-08 18:22:03.580
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-08 18:22:03.581
+!MESSAGE Log4j2 initialized with config file /home/adam/Documents/capstone/CaptstoneRepo/capstone/GestureTest/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-08 18:22:09.008
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-11-08 20:30:53.784 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-08 20:31:02.556
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-08 20:31:02.557
+!MESSAGE Log4j2 initialized with config file /home/adam/Documents/capstone/CaptstoneRepo/capstone/GestureTest/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-08 20:31:07.584
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-11-09 14:02:56.283 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-09 14:03:03.434
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-09 14:03:03.435
+!MESSAGE Log4j2 initialized with config file /home/adam/Documents/capstone/CaptstoneRepo/capstone/GestureTest/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-09 14:03:07.788
+!MESSAGE Started RMI Server, listening on port 41337

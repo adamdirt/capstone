@@ -1,5 +1,7 @@
 Core/Src/stm32g0xx_hal_msp.o: ../Core/Src/stm32g0xx_hal_msp.c \
- ../Core/Inc/main.h ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h \
+ ../Platform/platform.h ../VL53L5CX_ULD_API/inc/vl53l5cx_api.h \
+ ../VL53L5CX_ULD_API/inc/vl53l5cx_buffers.h ../Core/Inc/main.h \
+ ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h \
  ../Core/Inc/stm32g0xx_hal_conf.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_def.h \
@@ -29,7 +31,11 @@ Core/Src/stm32g0xx_hal_msp.o: ../Core/Src/stm32g0xx_hal_msp.c \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr_ex.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h \
- ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h
+ ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h \
+ ../VL53L5CX_ULD_API/inc/vl53l5cx_api.h
+../Platform/platform.h:
+../VL53L5CX_ULD_API/inc/vl53l5cx_api.h:
+../VL53L5CX_ULD_API/inc/vl53l5cx_buffers.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:
 ../Core/Inc/stm32g0xx_hal_conf.h:
@@ -62,3 +68,4 @@ Core/Src/stm32g0xx_hal_msp.o: ../Core/Src/stm32g0xx_hal_msp.c \
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr_ex.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h:
+../VL53L5CX_ULD_API/inc/vl53l5cx_api.h:

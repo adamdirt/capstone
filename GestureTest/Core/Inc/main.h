@@ -31,6 +31,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "vl53l5cx_api.h"
+//#include "platform.h"
 
 /* USER CODE END Includes */
 
@@ -69,6 +71,8 @@ void Error_Handler(void);
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
+#define I2C_RST_Pin GPIO_PIN_7
+#define I2C_RST_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
