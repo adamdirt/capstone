@@ -1,9 +1,9 @@
-GestureTest/Debug/*
-GestureTest/Drivers/*
-GestureTest/Platform/*
-GestureTest/VL53L5CX_ULD_API/*
-GestureTest/.metadata/*
-GestureTest/.settings/*
+GestureTest/Debug/
+GestureTest/Drivers/
+GestureTest/Platform/
+GestureTest/VL53L5CX_ULD_API/
+GestureTest/.metadata/
+GestureTest/.settings/
 GestureTest/GestureTest Debug.launch
 GestureTest/STM32G071RBTX_FLASH.ld
 GestureTest/.cproject

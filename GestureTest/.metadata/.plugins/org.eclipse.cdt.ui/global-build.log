@@ -1,56 +1,7 @@
-18:11:07 **** Incremental Build of configuration Debug for project GestureTest2 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G071xx -c -I../Core/Inc -I../Platform -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../VL53L5CX_ULD_API/inc -I../VL53L5CX_ULD_API/src -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32G0xx_HAL_Driver/Src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "GestureTest2.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/adam/Documents/capstone/CaptstoneRepo/GestureTest2/STM32G071RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GestureTest2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: GestureTest2.elf
- 
-arm-none-eabi-size   GestureTest2.elf 
-arm-none-eabi-objdump -h -S  GestureTest2.elf  > "GestureTest2.list"
-   text	   data	    bss	    dec	    hex	filename
- 112872	     20	   5900	 118792	  1d008	GestureTest2.elf
-Finished building: default.size.stdout
- 
-Finished building: GestureTest2.list
- 
-18:11:28 **** Incremental Build of configuration Debug for project GestureTest2 ****
+10:46:25 **** Incremental Build of configuration Debug for project GestureTest2 ****
 make -j8 all 
 arm-none-eabi-size   GestureTest2.elf 
-   text	   data	    bss	    dec	    hex	filename
- 112872	     20	   5900	 118792	  1d008	GestureTest2.elf
-Finished building: default.size.stdout
- 
-18:12:05 **** Incremental Build of configuration Debug for project GestureTest2 ****
-make -j8 all 
-arm-none-eabi-size   GestureTest2.elf 
-   text	   data	    bss	    dec	    hex	filename
- 112872	     20	   5900	 118792	  1d008	GestureTest2.elf
-Finished building: default.size.stdout
- 
-18:13:09 **** Incremental Build of configuration Debug for project GestureTest2 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G071xx -c -I../Core/Inc -I../Platform -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../VL53L5CX_ULD_API/inc -I../VL53L5CX_ULD_API/src -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32G0xx_HAL_Driver/Src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "GestureTest2.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/adam/Documents/capstone/CaptstoneRepo/GestureTest2/STM32G071RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GestureTest2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: GestureTest2.elf
- 
-arm-none-eabi-size   GestureTest2.elf 
-arm-none-eabi-objdump -h -S  GestureTest2.elf  > "GestureTest2.list"
-   text	   data	    bss	    dec	    hex	filename
- 112868	     20	   5900	 118788	  1d004	GestureTest2.elf
-Finished building: default.size.stdout
- 
-Finished building: GestureTest2.list
- 
-18:14:36 **** Incremental Build of configuration Debug for project GestureTest2 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G071xx -c -I../Core/Inc -I../Platform -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../VL53L5CX_ULD_API/inc -I../VL53L5CX_ULD_API/src -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32G0xx_HAL_Driver/Src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "GestureTest2.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/adam/Documents/capstone/CaptstoneRepo/GestureTest2/STM32G071RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GestureTest2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: GestureTest2.elf
- 
-arm-none-eabi-size   GestureTest2.elf 
-arm-none-eabi-objdump -h -S  GestureTest2.elf  > "GestureTest2.list"
    text	   data	    bss	    dec	    hex	filename
  112296	     20	   5900	 118216	  1cdc8	GestureTest2.elf
 Finished building: default.size.stdout
- 
-Finished building: GestureTest2.list
  
