@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;GestureTest2/Core/Src/tof_lib&apos;" deleteContents="false" description="Delete resource &apos;GestureTest2/Core/Src/tof_lib&apos;" element1="/GestureTest2/Core/Src/tof_lib" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1699393980159"/>
-</session>

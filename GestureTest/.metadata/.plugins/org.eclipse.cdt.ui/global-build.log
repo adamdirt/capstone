@@ -1,7 +1,0 @@
-10:52:01 **** Incremental Build of configuration Debug for project GestureTest2 ****
-make -j8 all 
-arm-none-eabi-size   GestureTest2.elf 
-   text	   data	    bss	    dec	    hex	filename
- 112296	     20	   5900	 118216	  1cdc8	GestureTest2.elf
-Finished building: default.size.stdout
- 
