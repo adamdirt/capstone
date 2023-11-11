@@ -1,4 +1,4 @@
-10:46:25 **** Incremental Build of configuration Debug for project GestureTest2 ****
+10:52:01 **** Incremental Build of configuration Debug for project GestureTest2 ****
 make -j8 all 
 arm-none-eabi-size   GestureTest2.elf 
    text	   data	    bss	    dec	    hex	filename
