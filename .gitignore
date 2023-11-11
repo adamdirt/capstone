@@ -1,7 +1,5 @@
 GestureTest/Debug/
 GestureTest/Drivers/
-GestureTest/Platform/
-GestureTest/VL53L5CX_ULD_API/
 GestureTest/.metadata/
 GestureTest/.settings/
 GestureTest/GestureTest Debug.launch
