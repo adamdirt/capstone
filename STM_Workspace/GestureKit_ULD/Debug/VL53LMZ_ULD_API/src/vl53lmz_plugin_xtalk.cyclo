@@ -1,0 +1,7 @@
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_xtalk.c:20:16:_vl53lmz_poll_for_answer	4
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_xtalk.c:54:16:_vl53lmz_program_output_config	8
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_xtalk.c:147:9:vl53lmz_calibrate_xtalk	12
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_xtalk.c:287:9:vl53lmz_get_caldata_xtalk	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_xtalk.c:316:9:vl53lmz_set_caldata_xtalk	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_xtalk.c:329:9:vl53lmz_get_xtalk_margin	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_xtalk.c:344:9:vl53lmz_set_xtalk_margin	2

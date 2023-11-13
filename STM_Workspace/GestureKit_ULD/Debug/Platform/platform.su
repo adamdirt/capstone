@@ -1,0 +1,10 @@
+../Platform/platform.c:18:5:LMZ_platform_init	16	static
+../Platform/platform.c:25:9:RdByte	40	static
+../Platform/platform.c:43:9:WrByte	32	static
+../Platform/platform.c:59:9:WrMulti	48	static
+../Platform/platform.c:71:9:RdMulti	40	static
+../Platform/platform.c:89:9:Reset_Sensor	24	static
+../Platform/platform.c:116:6:SwapBuffer	24	static
+../Platform/platform.c:135:9:WaitMs	16	static
+../Platform/platform.c:143:5:wait_for_LMZ_interrupt	16	static,ignoring_inline_asm
+../Platform/platform.c:158:7:SB_TmpBuffer	4	static

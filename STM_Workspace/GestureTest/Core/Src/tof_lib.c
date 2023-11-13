@@ -22,10 +22,12 @@ uint8_t init_tof(VL53L5CX_Configuration	*config){
 	status |= vl53l5cx_init(config);
 	HAL_Delay(1000);
 	//@todo more initialization
+	status |= vl53l5cx_set_resolution(config, VL53L5CX_RESOLUTION_8X8);
 	status |= vl53l5cx_set_ranging_frequency_hz(config, 10);
 	HAL_Delay(500);
+
 #ifdef DO_MOTION_TEST
-	status |= vl53l5cx_motion_indicator_init(config, &Sensor1MotionCfg, VL53L5CX_RESOLUTION_4X4);
+	status |= vl53l5cx_motion_indicator_init(config, &Sensor1MotionCfg, VL53L5CX_RESOLUTION_8X8);
 	HAL_Delay(100);
 #endif
 
