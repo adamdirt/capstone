@@ -1,0 +1,7 @@
+../Platform/platform.c:20:9:RdByte	56	static
+../Platform/platform.c:40:9:WrByte	40	static
+../Platform/platform.c:58:9:WrMulti	64	static
+../Platform/platform.c:72:9:RdMulti	48	static
+../Platform/platform.c:90:9:Reset_Sensor	32	static
+../Platform/platform.c:110:6:SwapBuffer	24	static
+../Platform/platform.c:129:9:WaitMs	16	static

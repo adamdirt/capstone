@@ -1,0 +1,29 @@
+11:29:34 **** Build of configuration Debug for project GestureTest2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G071xx -c -I../Core/Inc -I../Platform -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../VL53L5CX_ULD_API/inc -I../VL53L5CX_ULD_API/src -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32G0xx_HAL_Driver/Src -I"/home/adam/Documents/capstone/CaptstoneRepo/GestureTest2/Cortex-M0plus" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/tof_lib.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G071xx -c -I../Core/Inc -I../Platform -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../VL53L5CX_ULD_API/inc -I../VL53L5CX_ULD_API/src -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32G0xx_HAL_Driver/Src -I"/home/adam/Documents/capstone/CaptstoneRepo/GestureTest2/Cortex-M0plus" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tof_lib.d" -MT"Core/Src/tof_lib.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/tof_lib.o"
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/tof_lib.h:49:54: error: unknown type name 'VL53LMZ_ResultsData'; did you mean 'VL53L5CX_ResultsData'?
+   49 | uint8_t SEN_CopyRangingData(SEN_data_t* sensor_data, VL53LMZ_ResultsData *results);
+      |                                                      ^~~~~~~~~~~~~~~~~~~
+      |                                                      VL53L5CX_ResultsData
+In file included from ../Core/Src/tof_lib.c:8:
+../Core/Inc/tof_lib.h:49:54: error: unknown type name 'VL53LMZ_ResultsData'; did you mean 'VL53L5CX_ResultsData'?
+   49 | uint8_t SEN_CopyRangingData(SEN_data_t* sensor_data, VL53LMZ_ResultsData *results);
+      |                                                      ^~~~~~~~~~~~~~~~~~~
+      |                                                      VL53L5CX_ResultsData
+../Core/Src/tof_lib.c:67:63: error: unknown type name 'VL53LMZ_ResultsData'; did you mean 'VL53L5CX_ResultsData'?
+   67 | int* select_target_index(int *target_indices, int zone_index, VL53LMZ_ResultsData *pRangingData)
+      |                                                               ^~~~~~~~~~~~~~~~~~~
+      |                                                               VL53L5CX_ResultsData
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/tof_lib.c:74:48: error: unknown type name 'VL53LMZ_ResultsData'; did you mean 'VL53L5CX_ResultsData'?
+   74 | uint8_t SEN_CopyRangingData(SEN_data_t* pDest, VL53LMZ_ResultsData *results)
+      |                                                ^~~~~~~~~~~~~~~~~~~
+      |                                                VL53L5CX_ResultsData
+make: *** [Core/Src/subdir.mk:37: Core/Src/tof_lib.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+11:29:35 Build Failed. 7 errors, 0 warnings. (took 225ms)
+
