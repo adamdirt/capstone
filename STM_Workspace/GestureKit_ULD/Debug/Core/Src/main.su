@@ -1,0 +1,12 @@
+../Core/Src/main.c:266:6:HAL_GPIO_EXTI_Callback	16	static
+../Core/Src/main.c:275:27:__io_putchar	24	static
+../Core/Src/main.c:281:27:__io_getchar	16	static
+../Core/Src/main.c:296:6:HAL_UART_RxCpltCallback	16	static
+../Core/Src/main.c:332:6:UartComm_Start	16	static
+../Core/Src/main.c:345:6:HAL_UART_ErrorCallback	16	static
+../Core/Src/main.c:359:5:main	8	static
+../Core/Src/main.c:408:6:SystemClock_Config	88	static
+../Core/Src/main.c:455:13:MX_I2C1_Init	8	static
+../Core/Src/main.c:489:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:522:13:MX_GPIO_Init	48	static
+../Core/Src/main.c:596:6:Error_Handler	4	static,ignoring_inline_asm

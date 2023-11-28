@@ -1,0 +1,6 @@
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_detection_thresholds.c:15:9:vl53lmz_get_detection_thresholds_enable	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_detection_thresholds.c:28:9:vl53lmz_set_detection_thresholds_enable	2
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_detection_thresholds.c:59:9:vl53lmz_get_detection_thresholds	18
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_detection_thresholds.c:107:9:vl53lmz_set_detection_thresholds	8
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_detection_thresholds.c:162:9:vl53lmz_get_detection_thresholds_auto_stop	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_detection_thresholds.c:175:9:vl53lmz_set_detection_thresholds_auto_stop	1

@@ -1,17 +1,10 @@
-11:47:16 **** Incremental Build of configuration Debug for project GestureTest ****
+17:09:48 **** Incremental Build of configuration Debug for project GestureTest ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G071xx -c -I../Core/Inc -I../Platform -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../VL53L5CX_ULD_API/inc -I../VL53L5CX_ULD_API/src -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32G0xx_HAL_Driver/Src -I"/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest/Cortex-M0plus" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "GestureTest.elf" @"objects.list" /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest/Cortex-M0plus/libGesturesMZ_m0plus.a  -mcpu=cortex-m0plus -T"/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest/STM32G071RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GestureTest.map" -Wl,--gc-sections -static -L"/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest/Cortex-M0plus" --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: GestureTest.elf
- 
 arm-none-eabi-size   GestureTest.elf 
-arm-none-eabi-objdump -h -S  GestureTest.elf  > "GestureTest.list"
    text	   data	    bss	    dec	    hex	filename
- 112868	     20	   5900	 118788	  1d004	GestureTest.elf
+ 126272	    120	  12736	 139128	  21f78	GestureTest.elf
 Finished building: default.size.stdout
  
-Finished building: GestureTest.list
- 
 
-11:47:16 Build Finished. 0 errors, 0 warnings. (took 374ms)
+17:09:49 Build Finished. 0 errors, 0 warnings. (took 240ms)
 

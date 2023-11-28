@@ -1,5 +1,5 @@
 ../Core/Src/tof_lib.c:20:9:init_tof	32	static
-../Core/Src/tof_lib.c:42:9:sample_once	24	static
-../Core/Src/tof_lib.c:54:9:detect_motion	24	static
-../Core/Src/tof_lib.c:67:6:select_target_index	24	static
-../Core/Src/tof_lib.c:74:9:SEN_CopyRangingData	72	static
+../Core/Src/tof_lib.c:44:9:sample_once	24	static
+../Core/Src/tof_lib.c:56:9:detect_motion	24	static
+../Core/Src/tof_lib.c:69:6:select_target_index	24	static
+../Core/Src/tof_lib.c:76:9:SEN_CopyRangingData	72	static

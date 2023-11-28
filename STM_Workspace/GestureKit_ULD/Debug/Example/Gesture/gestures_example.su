@@ -1,0 +1,6 @@
+../Example/Gesture/gestures_example.c:126:6:select_target_index	24	static
+../Example/Gesture/gestures_example.c:134:5:SEN_CopyRangingData	56	static
+../Example/Gesture/gestures_example.c:167:6:print_uart	48	static
+../Example/Gesture/gestures_example.c:214:6:print_evk	2400	static
+../Example/Gesture/gestures_example.c:305:5:gesture_library_init_configure	136	static
+../Example/Gesture/gestures_example.c:398:5:LMZ_gesture_app_main	32	static
