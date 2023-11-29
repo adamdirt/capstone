@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="ImportExportAction">
-		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.ExternalProject"/>
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.FileSystem"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="FileSystemImportWizard">
+		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="true"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureKit_ULD/apps_layer"/>
+			<item value="/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureKit_ULD/GesturesMZ"/>
+			<item value="/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureKit_ULD/Platform"/>
+			<item value="/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureKit_ULD/VL53LMZ_ULD_API"/>
+			<item value="/home/adam/Downloads/VL53L5_GestureKit_ULD_1.4.0/VL53LMZ_ULD_API"/>
 		</list>
 	</section>
 </section>
