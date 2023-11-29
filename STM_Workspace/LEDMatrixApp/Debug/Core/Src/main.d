@@ -26,7 +26,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+ ../Core/Inc/tof_lib.h \
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/VL53LMZ_ULD_API/inc/vl53lmz_api.h \
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Platform/platform.h \
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/gwmz.h \
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/htgd_platform.h \
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/sensor.h \
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/htmz.h \
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/ring_fbuffer_vm.h \
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/opti_math.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -56,3 +65,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
+../Core/Inc/tof_lib.h:
+/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/VL53LMZ_ULD_API/inc/vl53lmz_api.h:
+/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Platform/platform.h:
+/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/gwmz.h:
+/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/htgd_platform.h:
+/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/sensor.h:
+/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/htmz.h:
+/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/ring_fbuffer_vm.h:
+/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/opti_math.h:

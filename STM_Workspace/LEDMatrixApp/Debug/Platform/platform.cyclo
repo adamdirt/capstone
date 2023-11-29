@@ -1,0 +1,10 @@
+../Platform/platform.c:18:5:LMZ_platform_init	1
+../Platform/platform.c:25:9:RdByte	1
+../Platform/platform.c:43:9:WrByte	1
+../Platform/platform.c:59:9:WrMulti	1
+../Platform/platform.c:71:9:RdMulti	1
+../Platform/platform.c:89:9:Reset_Sensor	1
+../Platform/platform.c:116:6:SwapBuffer	2
+../Platform/platform.c:135:9:WaitMs	1
+../Platform/platform.c:143:5:wait_for_LMZ_interrupt	2
+../Platform/platform.c:158:7:SB_TmpBuffer	1

@@ -1,0 +1,3 @@
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_motion_indicator.c:20:9:vl53lmz_motion_indicator_init	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_motion_indicator.c:52:9:vl53lmz_motion_indicator_set_distance_motion	4
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_motion_indicator.c:86:9:vl53lmz_motion_indicator_set_resolution	7

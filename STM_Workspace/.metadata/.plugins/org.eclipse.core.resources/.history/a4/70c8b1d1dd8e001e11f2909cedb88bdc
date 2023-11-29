@@ -1,0 +1,33 @@
+/*
+ * tof_lib.c
+ *
+ *  Created on: Nov 29, 2023
+ *      Author: adam
+ */
+
+#include "tof_lib.h"
+
+VL53LMZ_Configuration Sensor1Cfg;
+VL53LMZ_ResultsData Sensor1Results;
+
+
+
+
+uint8_t matrix_app_main(){
+	// variables
+	uint8_t status = 0;
+	uint8_t ranging = 0;
+
+	// initialization
+    status |= LMZ_platform_init(&Sensor1Cfg.platform);
+
+	status |= vl53lmz_init(&Sensor1Cfg);
+
+
+
+	// begin app
+	while (1){
+
+	}
+
+}

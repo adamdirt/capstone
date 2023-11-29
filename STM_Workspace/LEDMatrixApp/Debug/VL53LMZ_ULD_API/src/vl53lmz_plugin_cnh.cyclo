@@ -1,0 +1,10 @@
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:121:9:vl53lmz_cnh_init_config	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:152:9:vl53lmz_cnh_create_agg_map	8
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:203:10:vl53lmz_cnh_calc_required_memory	3
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:227:9:vl53lmz_cnh_calc_min_max_distance	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:248:9:vl53lmz_cnh_send_config	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:256:9:vl53lmz_cnh_get_block_addresses	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:285:10:vl53lmz_cnh_get_ref_residual	1
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:290:9:cnh_get_pingpong_size_in_word	5
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:316:10:cnh_calculate_required_memory	2
+../VL53LMZ_ULD_API/src/vl53lmz_plugin_cnh.c:331:6:cnh_get_mem_block_addresses	7
