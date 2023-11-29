@@ -20,8 +20,8 @@
 
 //#define DO_IS_ALIVE_TEST
 //#define DO_MOTION_TEST
-//#define DO_DISTANCE_TEST
-#define DO_GESTURE_TEST
+#define DO_DISTANCE_TEST
+//#define DO_GESTURE_TEST
 
 
 

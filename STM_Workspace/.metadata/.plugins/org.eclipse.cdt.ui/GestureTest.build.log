@@ -1,10 +1,10 @@
-17:09:48 **** Incremental Build of configuration Debug for project GestureTest ****
+11:46:23 **** Incremental Build of configuration Debug for project GestureTest ****
 make -j8 all 
 arm-none-eabi-size   GestureTest.elf 
    text	   data	    bss	    dec	    hex	filename
- 126272	    120	  12736	 139128	  21f78	GestureTest.elf
+ 113392	     20	   5900	 119312	  1d210	GestureTest.elf
 Finished building: default.size.stdout
  
 
-17:09:49 Build Finished. 0 errors, 0 warnings. (took 240ms)
+11:46:23 Build Finished. 0 errors, 0 warnings. (took 175ms)
 
