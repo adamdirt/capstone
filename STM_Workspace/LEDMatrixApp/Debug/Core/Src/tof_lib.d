@@ -34,7 +34,8 @@ Core/Src/tof_lib.o: ../Core/Src/tof_lib.c ../Core/Inc/tof_lib.h \
  /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/sensor.h \
  /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/htmz.h \
  /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/ring_fbuffer_vm.h \
- /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/opti_math.h
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/opti_math.h \
+ /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/htmz.h
 ../Core/Inc/tof_lib.h:
 /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/VL53LMZ_ULD_API/inc/vl53lmz_api.h:
 /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Platform/platform.h:
@@ -72,3 +73,4 @@ Core/Src/tof_lib.o: ../Core/Src/tof_lib.c ../Core/Inc/tof_lib.h \
 /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/htmz.h:
 /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/ring_fbuffer_vm.h:
 /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/opti_math.h:
+/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ/htmz.h:

@@ -812,3 +812,65 @@
 2023-11-29 12:46:38,607 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
 2023-11-29 12:46:38,608 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
 2023-11-29 12:46:38,608 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:32,020 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:32,020 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:32,020 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:32,020 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:32,034 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:32,034 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:32,045 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:32,045 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:34,544 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:34,544 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:34,544 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:34,544 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:34,556 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:34,556 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:34,568 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:34,568 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:51:54,880 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x418,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-29 12:52:21,393 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 784606056 Bytes (912261120)
+2023-11-29 12:52:23,126 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 307044728 Bytes (912261120)
+2023-11-29 12:52:27,709 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 393405856 Bytes (912261120)
+2023-11-29 12:52:27,877 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-11-29 12:52:27,877 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-11-29 12:52:27,877 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-11-29 12:52:27,877 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-11-29 12:52:27,877 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-11-29 12:52:27,877 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-11-29 12:52:27,877 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2023-11-29 12:52:27,878 [INFO] CodeGenerator:799 - code generatio: config db path: /opt/st/stm32cubeide_1.13.2/plugins/com.st.stm32cube.common.mx_6.9.2.202309101412//db/
+2023-11-29 12:52:27,879 [WARN] IP:2114 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-11-29 12:52:27,879 [WARN] IP:2114 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-11-29 12:52:28,051 [INFO] CodeEngine:255 - oldGeneratedFile, /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/MXTmpFiles/license.tmp_save
+2023-11-29 12:52:28,147 [INFO] CodeEngine:279 - Generated code: /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/MXTmpFiles/license.tmp
+2023-11-29 12:52:28,184 [INFO] CodeEngine:255 - oldGeneratedFile, /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/MXTmpFiles/gpio.tmp_save
+2023-11-29 12:52:28,251 [INFO] CodeEngine:279 - Generated code: /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/MXTmpFiles/gpio.tmp
+2023-11-29 12:52:28,334 [INFO] CodeEngine:255 - oldGeneratedFile, /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Src/stm32f4xx_it.c_save
+2023-11-29 12:52:28,501 [INFO] CodeEngine:279 - Generated code: /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Src/stm32f4xx_it.c
+2023-11-29 12:52:28,502 [INFO] CodeEngine:255 - oldGeneratedFile, /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Inc/stm32f4xx_it.h_save
+2023-11-29 12:52:28,554 [INFO] CodeEngine:279 - Generated code: /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Inc/stm32f4xx_it.h
+2023-11-29 12:52:28,556 [INFO] CodeEngine:255 - oldGeneratedFile, /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Src/stm32f4xx_hal_msp.c_save
+2023-11-29 12:52:28,658 [INFO] CodeEngine:279 - Generated code: /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Src/stm32f4xx_hal_msp.c
+2023-11-29 12:52:28,659 [INFO] CodeEngine:255 - oldGeneratedFile, /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/MXTmpFiles/system.tmp_save
+2023-11-29 12:52:28,710 [INFO] CodeEngine:279 - Generated code: /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/MXTmpFiles/system.tmp
+2023-11-29 12:52:28,712 [INFO] CodeEngine:311 - oldGeneratedFile, /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Inc/stm32f4xx_hal_conf.h_save
+2023-11-29 12:52:28,777 [INFO] CodeEngine:335 - Generated code: /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Inc/stm32f4xx_hal_conf.h
+2023-11-29 12:52:28,794 [INFO] CodeEngine:255 - oldGeneratedFile, /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Inc/main.h_save
+2023-11-29 12:52:28,867 [INFO] CodeEngine:279 - Generated code: /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Inc/main.h
+2023-11-29 12:52:28,868 [INFO] CodeEngine:255 - oldGeneratedFile, /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Src/main.c_save
+2023-11-29 12:52:28,957 [INFO] CodeEngine:279 - Generated code: /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Core/Src/main.c
+2023-11-29 12:52:29,330 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 14mS.
+2023-11-29 12:52:29,331 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-11-29 12:52:29,479 [INFO] ConfigFileManager:1457 - The Die is : DIE433
+2023-11-29 12:52:29,481 [INFO] ApiDbMcu:507 - Load IP Config File for FATFS
+2023-11-29 12:52:29,485 [INFO] ApiDbMcu:507 - Load IP Config File for FREERTOS
+2023-11-29 12:52:29,486 [INFO] ApiDbMcu:507 - Load IP Config File for LIBJPEG
+2023-11-29 12:52:29,490 [INFO] ApiDbMcu:507 - Load IP Config File for MBEDTLS
+2023-11-29 12:52:29,495 [INFO] ApiDbMcu:507 - Load IP Config File for USB_DEVICE
+2023-11-29 12:52:29,497 [INFO] ApiDbMcu:507 - Load IP Config File for USB_HOST
+2023-11-29 12:52:30,529 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1197mS.
+2023-11-29 12:52:30,529 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-11-29 12:52:30,530 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-11-29 12:52:32,962 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2023-11-29 18:07:22,984 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out

@@ -1190,3 +1190,73 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.cdt.managedbuilder.co
 	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:952)
 	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1307)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY org.eclipse.core.resources 4 77 2023-11-29 18:59:27.980
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-11-29 18:59:27.980
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-11-29 18:59:27.980
+!MESSAGE /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest overlaps the location of another project: 'GestureTest'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-11-29 18:59:27.980
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-11-29 19:01:47.161
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-11-29 19:01:47.161
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-11-29 19:01:47.161
+!MESSAGE /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest overlaps the location of another project: 'GestureTest'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-11-29 19:01:47.161
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-11-29 19:03:59.777
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-11-29 19:03:59.777
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-11-29 19:03:59.777
+!MESSAGE /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest overlaps the location of another project: 'GestureTest'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-11-29 19:03:59.777
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-11-29 19:04:00.860
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-11-29 19:04:00.860
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-11-29 19:04:00.860
+!MESSAGE /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest overlaps the location of another project: 'GestureTest'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-11-29 19:04:00.860
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-11-29 19:15:29.434
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-11-29 19:15:29.434
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-11-29 19:15:29.434
+!MESSAGE /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest overlaps the location of another project: 'GestureTest'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-11-29 19:15:29.434
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-11-29 19:16:11.104
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-11-29 19:16:11.104
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-11-29 19:16:11.104
+!MESSAGE /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest overlaps the location of another project: 'GestureTest'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-11-29 19:16:11.104
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-11-29 19:25:32.327
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-11-29 19:25:32.327
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-11-29 19:25:32.327
+!MESSAGE /home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/GestureTest overlaps the location of another project: 'GestureTest'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-11-29 19:25:32.328
+!MESSAGE Project is null

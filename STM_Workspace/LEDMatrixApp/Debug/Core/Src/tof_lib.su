@@ -1,2 +1,7 @@
-../Core/Src/tof_lib.c:14:9:init_tof	24	static
-../Core/Src/tof_lib.c:30:9:matrix_app_main	16	static
+../Core/Src/tof_lib.c:22:9:init_tof	24	static
+../Core/Src/tof_lib.c:38:9:init_tracking	16	static
+../Core/Src/tof_lib.c:50:9:send_led_data	24	static
+../Core/Src/tof_lib.c:60:6:select_target_index	24	static
+../Core/Src/tof_lib.c:67:9:sample_once	24	static
+../Core/Src/tof_lib.c:79:9:SEN_CopyRangingData	56	static
+../Core/Src/tof_lib.c:109:9:matrix_app_main	16	static
