@@ -6,6 +6,7 @@
  */
 
 #include "tof_lib.h"
+#include <math.h>
 
 extern UART_HandleTypeDef huart6;
 
@@ -105,6 +106,18 @@ uint8_t SEN_CopyRangingData(SEN_data_t* pDest, VL53LMZ_ResultsData *pRangingData
 
 	return 0;
 }
+
+void convertSingleSensorPos(int x, int y, int z, int *pos_buffer) {
+	float maxX = z*sin(PI/4);
+	float maxY = maxX;
+	float Xinterval = maxX/MAX_QUADRANT_X; // divide by 13 and we can overlap column 13 of left sensor with column 1 of right sensor
+	float Yinterval = maxY/MAX_QUADRANT_Y;
+	int row = x/Xinterval;
+	int col = x/Xinterval;
+	pos_buffer[0] = row;
+	pos_buffer[1] = col;
+}
+
 
 uint8_t matrix_app_main(){
 	// variables

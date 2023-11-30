@@ -22,6 +22,9 @@
 // others
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
+#define PI 3.14159265
+#define MAX_QUADRANT_X 13
+#define MAX_QUADRANT_Y 10
 
 typedef struct{
 	uint8_t row;
@@ -34,6 +37,7 @@ typedef struct{
 
 
 uint8_t matrix_app_main();
+void convertSingleSensorPos(int x, int y, int z, int *pos_buffer);
 
 uint8_t init_tof(VL53LMZ_Configuration *config);
 
