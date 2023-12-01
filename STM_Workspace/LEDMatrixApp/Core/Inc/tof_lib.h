@@ -23,8 +23,9 @@
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
 #define PI 3.14159265
-#define MAX_QUADRANT_X 13
-#define MAX_QUADRANT_Y 10
+#define MAX_QUADRANT_X 5
+#define MAX_QUADRANT_Y 5
+#define SINE_VALUE 0.41421356237
 
 typedef struct{
 	uint8_t row;

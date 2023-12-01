@@ -2442,3 +2442,22 @@ java.lang.Exception: Resource '/LEDMatrixApp' does not exist.
 
 !ENTRY org.eclipse.cdt.core 1 0 2023-11-30 18:32:05.569
 !MESSAGE Indexed 'LEDMatrixApp' (32 sources, 105 headers) in 5.75 sec: 11,061 declarations; 53,388 references; 26 unresolved inclusions; 43 syntax errors; 1,823 unresolved names (2.8%)
+!SESSION 2023-12-01 16:35:15.355 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  C:\Users\zbelk\OneDrive - University of Virginia\7th Semester-DESKTOP-LOT5F8S\Capstone\capstone\STM_Workspace\LEDMatrixApp\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\zbelk\OneDrive - University of Virginia\7th Semester-DESKTOP-LOT5F8S\Capstone\capstone\STM_Workspace\LEDMatrixApp\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-12-01 16:35:24.183
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-12-01 16:35:24.185
+!MESSAGE Log4j2 initialized with config file C:\Users\zbelk\OneDrive - University of Virginia\7th Semester-DESKTOP-LOT5F8S\Capstone\capstone\STM_Workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-12-01 16:35:33.887
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-12-01 16:35:40.277
+!MESSAGE Indexed 'LEDMatrixApp' (32 sources, 135 headers) in 6 sec: 12,795 declarations; 56,628 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.21%)

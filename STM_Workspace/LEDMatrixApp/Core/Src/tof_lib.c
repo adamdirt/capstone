@@ -108,14 +108,28 @@ uint8_t SEN_CopyRangingData(SEN_data_t* pDest, VL53LMZ_ResultsData *pRangingData
 }
 
 void convertSingleSensorPos(int x, int y, int z, int *pos_buffer) {
-	float maxX = z*sin(PI/4);
+	float maxX = z*SINE_VALUE;
 	float maxY = maxX;
-	float Xinterval = maxX/MAX_QUADRANT_X; // divide by 13 and we can overlap column 13 of left sensor with column 1 of right sensor
-	float Yinterval = maxY/MAX_QUADRANT_Y;
-	int row = x/Xinterval;
+	float Xinterval = (maxX*2)/MAX_QUADRANT_X; // divide by 13 and we can overlap column 13 of left sensor with column 1 of right sensor
+	float Yinterval = (maxY*2)/MAX_QUADRANT_Y;
+	int row = -1*(y/Yinterval);
 	int col = x/Xinterval;
-	pos_buffer[0] = row;
-	pos_buffer[1] = col;
+	row += (int) (MAX_QUADRANT_Y/2);
+	col += (int) (MAX_QUADRANT_X/2);
+	if (row > MAX_QUADRANT_Y-1) {
+		row = MAX_QUADRANT_Y-1;
+	}
+	if (row < 0) {
+		row = 0;
+	}
+	if (col > MAX_QUADRANT_X-1) {
+		col = MAX_QUADRANT_X-1;
+	}
+	if (col < 0) {
+		col = 0;
+	}
+	pos_buffer[0] = (uint8_t) row;
+	pos_buffer[1] = (uint8_t) col;
 }
 
 
