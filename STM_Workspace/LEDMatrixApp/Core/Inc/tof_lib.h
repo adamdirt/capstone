@@ -22,18 +22,25 @@
 // others
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
+#define PI 3.14159265
+#define SINE_VALUE 0.41421356237
+#define MAX_QUADRANT_X 5
+#define MAX_QUADRANT_Y 5
+#define MATRIX_HEIGHT			5
+#define MATRIX_WIDTH			5
+
+typedef enum led_color {Black, Red, Orange, Yellow, Green, Blue, Violet, White} led_color;
 
 typedef struct{
 	uint8_t row;
 	uint8_t column;
 
-	uint8_t red;
-	uint8_t green;
-	uint8_t blue;
+	led_color color;
 } LED;
 
 
 uint8_t matrix_app_main();
+void convertSingleSensorPos(int x, int y, int z, uint8_t *pos_buffer);
 
 uint8_t init_tof(VL53LMZ_Configuration *config);
 

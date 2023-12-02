@@ -6,6 +6,7 @@
  */
 
 #include "tof_lib.h"
+#include <math.h>
 
 extern UART_HandleTypeDef huart6;
 
@@ -18,6 +19,8 @@ GW_proc_t gest_predictor;
 HT_proc_t hand_tracker;
 SEN_data_t sensor_data;
 
+
+LED LEDMatrix[MATRIX_HEIGHT][MATRIX_WIDTH];
 
 uint8_t init_tof(VL53LMZ_Configuration	*config){
 	uint8_t status = VL53LMZ_STATUS_OK;
@@ -37,22 +40,35 @@ uint8_t init_tof(VL53LMZ_Configuration	*config){
 
 uint8_t init_tracking(){
 	uint8_t status = 0;
+	uint8_t row, col;
 
-	status |= HT_init(&hand_tracker, &sensor_data);
+	status |= GW_init(&gest_predictor, &hand_tracker, &sensor_data);
 
 	status |= HT_set_square_resolution(&hand_tracker, &sensor_data, VL53LMZ_RESOLUTION_8X8);
 
-	status |= HT_set_frequency(&hand_tracker, &sensor_data, 15);
+	status |= GW_set_frequency(&gest_predictor, &hand_tracker, &sensor_data, 15);
 
+	for (row = 0; row < MATRIX_HEIGHT; row++){
+		for (col = 0; col < MATRIX_WIDTH; col++){
+			LEDMatrix[row][col].row = row;
+			LEDMatrix[row][col].column = col;
+			LEDMatrix[row][col].color = Black;
+		}
+	}
 	return status;
 }
 
 uint8_t send_led_data(LED* updated_LED){
 	uint8_t status = 0;
+//	uint8_t data_buffer[5] = {updated_LED->row, updated_LED->column,
+//							updated_LED->color};
+	//test buffer
 	uint8_t data_buffer[5] = {updated_LED->row, updated_LED->column,
-							updated_LED->red, updated_LED->blue, updated_LED->green};
+								4, 0, 0};
+
 
 	status |= HAL_UART_Transmit(&huart6, data_buffer, 5, 1000);
+	HAL_Delay(10);
 
 	return status;
 }
@@ -106,6 +122,48 @@ uint8_t SEN_CopyRangingData(SEN_data_t* pDest, VL53LMZ_ResultsData *pRangingData
 	return 0;
 }
 
+void convertSingleSensorPos(int x, int y, int z, uint8_t *pos_buffer) {
+	float maxX = z*SINE_VALUE;
+	float maxY = maxX;
+	float Xinterval = (maxX*2)/MAX_QUADRANT_X; // divide by 13 and we can overlap column 13 of left sensor with column 1 of right sensor
+	float Yinterval = (maxY*2)/MAX_QUADRANT_Y;
+	int row = -1*(y/Yinterval);
+	int col = x/Xinterval;
+	row += (int) (MAX_QUADRANT_Y/2);
+	col += (int) (MAX_QUADRANT_X/2);
+	if (row > MAX_QUADRANT_Y-1) {
+		row = MAX_QUADRANT_Y-1;
+	}
+	if (row < 0) {
+		row = 0;
+	}
+	if (col > MAX_QUADRANT_X-1) {
+		col = MAX_QUADRANT_X-1;
+	}
+	if (col < 0) {
+		col = 0;
+	}
+	pos_buffer[0] = (uint8_t) row;
+	pos_buffer[1] = (uint8_t) col;
+}
+
+
+void update_led_matrix(HT_hand_t* cur_hand, led_color new_color){
+	uint8_t led_index[2];
+	uint8_t row, col;
+
+	convertSingleSensorPos(cur_hand->hand_x, cur_hand->hand_y, cur_hand->hand_z, led_index);
+	row = led_index[0];
+	col = led_index[1];
+
+//	send_led_data(&LEDMatrix[row][col]);
+
+	if (LEDMatrix[row][col].color != new_color){
+		LEDMatrix[row][col].color = new_color;
+		send_led_data(&LEDMatrix[row][col]);
+	}
+}
+
 uint8_t matrix_app_main(){
 	// variables
 	uint8_t status = VL53LMZ_STATUS_OK;
@@ -126,9 +184,10 @@ uint8_t matrix_app_main(){
 
     	status |= SEN_CopyRangingData(&sensor_data, &Sensor1Results);
 
-		status |= HT_run(&hand_tracker, &sensor_data);
+		status |= GW_run(&gest_predictor, &hand_tracker, &sensor_data);
 
 		if(hand_tracker.hand.found){
+			update_led_matrix(&hand_tracker.hand, Red);
     		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
 		}
 		else {
@@ -146,7 +205,3 @@ uint8_t matrix_app_main(){
     	}
     }
 }
-
-
-
-

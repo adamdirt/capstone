@@ -1,0 +1,70 @@
+/*
+ * tof_lib.h
+ *
+ *  Created on: Nov 29, 2023
+ *      Author: adam
+ */
+
+#ifndef INC_TOF_LIB_H_
+#define INC_TOF_LIB_H_
+
+// includes
+#include "vl53lmz_api.h"
+#include "gwmz.h"
+#include "htmz.h"
+
+// macros for tof
+#define VL53LMZ_8X8_RANGING_FREQ 		((uint8_t) 15U);
+#define NUM_SENSORS 					1
+#define USE_TOF_1
+//#define USE_TOF_2
+//#define USE_TOF_3
+//#define USE_TOF_4
+
+
+// macros for lib
+#define GESTURE_APP_RANGING_PERIOD		50;
+
+// others
+#define LD2_Pin 						GPIO_PIN_5
+#define LD2_GPIO_Port 					GPIOA
+#define MATRIX_WIDTH					25
+#define MATRIX_HEIGHT 					20
+
+typedef enum led_color {Black, Red, Orange, Yellow, Green, Blue, Violet, White} led_color;
+
+typedef struct{
+	uint8_t row;
+	uint8_t column;
+	led_color color;
+} LED;
+
+typedef struct{
+	uint8_t size; // size cprresponds to the radius of leds to light up
+	led_color color;
+} Brush;
+
+typedef struct{
+	VL53LMZ_Configuration config;
+	VL53LMZ_ResultsData results;
+	//todo add more?
+	GW_proc_t gest_predictor;
+	HT_proc_t hand_tracker;
+	SEN_data_t sensor_data;
+
+} ToFData;
+
+
+uint8_t matrix_app_main();
+
+uint8_t init_tofs();
+
+uint8_t SEN_CopyRangingData(SEN_data_t* pDest, VL53LMZ_ResultsData *pRangingData);
+int* select_target_index(int *target_indices, int zone_index, VL53LMZ_ResultsData *pRangingData);
+
+/*
+ * @param data_buff[5] : list of the packet data to be sent
+ */
+uint8_t send_led_data(LED* updated_LED);
+
+#endif /* INC_TOF_LIB_H_ */

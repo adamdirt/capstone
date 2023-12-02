@@ -1,4 +1,4 @@
-19:16:10 **** Incremental Build of configuration Debug for project GestureKit_ULD ****
+16:51:55 **** Incremental Build of configuration Debug for project GestureKit_ULD ****
 make -j8 all 
 arm-none-eabi-size   GestureKit_ULD.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   GestureKit_ULD.elf
 Finished building: default.size.stdout
  
 
-19:16:11 Build Finished. 0 errors, 0 warnings. (took 237ms)
+16:51:55 Build Finished. 0 errors, 0 warnings. (took 177ms)
 

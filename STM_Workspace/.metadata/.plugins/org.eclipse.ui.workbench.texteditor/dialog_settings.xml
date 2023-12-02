@@ -8,6 +8,8 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="orient"/>
+			<item value="RangingPeriod"/>
 			<item value="ld3"/>
 			<item value="ld2"/>
 			<item value="led"/>
