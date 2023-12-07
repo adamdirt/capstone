@@ -9,3 +9,4 @@
 ../Core/Src/stm32f4xx_it.c:183:6:SysTick_Handler	1
 ../Core/Src/stm32f4xx_it.c:204:6:EXTI4_IRQHandler	1
 ../Core/Src/stm32f4xx_it.c:218:6:USART2_IRQHandler	1
+../Core/Src/stm32f4xx_it.c:232:6:EXTI15_10_IRQHandler	1

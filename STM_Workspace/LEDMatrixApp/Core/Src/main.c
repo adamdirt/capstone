@@ -43,10 +43,10 @@
 I2C_HandleTypeDef hi2c1;
 
 UART_HandleTypeDef huart2;
-UART_HandleTypeDef huart6;
 
 /* USER CODE BEGIN PV */
-volatile int 			IntrCount;
+uint8_t ranging;
+extern VL53LMZ_Configuration Sensor1Cfg;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -54,7 +54,6 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_USART2_UART_Init(void);
-static void MX_USART6_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -94,9 +93,11 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   MX_USART2_UART_Init();
-  MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
 
+//  LED test_led = {2, 3, 4};
+//  uint8_t buff[5] = {1, 2, 3, 4, 5};
+//  uint8_t status = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -104,8 +105,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  matrix_app_main();
+
     /* USER CODE BEGIN 3 */
+//	  status |= HAL_I2C_Master_Transmit(&hi2c2, 0x08 << 1, buff, 5, 100);
+	  matrix_app_main();
 
   }
   /* USER CODE END 3 */
@@ -225,39 +228,6 @@ static void MX_USART2_UART_Init(void)
 }
 
 /**
-  * @brief USART6 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART6_UART_Init(void)
-{
-
-  /* USER CODE BEGIN USART6_Init 0 */
-
-  /* USER CODE END USART6_Init 0 */
-
-  /* USER CODE BEGIN USART6_Init 1 */
-
-  /* USER CODE END USART6_Init 1 */
-  huart6.Instance = USART6;
-  huart6.Init.BaudRate = 57600;
-  huart6.Init.WordLength = UART_WORDLENGTH_8B;
-  huart6.Init.StopBits = UART_STOPBITS_1;
-  huart6.Init.Parity = UART_PARITY_NONE;
-  huart6.Init.Mode = UART_MODE_TX_RX;
-  huart6.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart6.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_UART_Init(&huart6) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART6_Init 2 */
-
-  /* USER CODE END USART6_Init 2 */
-
-}
-
-/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -275,8 +245,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, FLEX_SPI_I2C_N_Pin|LPn1_Pin|LPn2_Pin|LPn3_Pin
-                          |LPn4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LPn1_GPIO_Port, LPn1_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, LPn2_Pin|LPn3_Pin|LPn4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
@@ -287,12 +259,11 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(I2C_RST_C_GPIO_Port, I2C_RST_C_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : FLEX_SPI_I2C_N_Pin LPn3_Pin */
-  GPIO_InitStruct.Pin = FLEX_SPI_I2C_N_Pin|LPn3_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  /*Configure GPIO pin : B1_Pin */
+  GPIO_InitStruct.Pin = B1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LPn1_Pin LPn2_Pin LPn4_Pin */
   GPIO_InitStruct.Pin = LPn1_Pin|LPn2_Pin|LPn4_Pin;
@@ -300,6 +271,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LPn3_Pin */
+  GPIO_InitStruct.Pin = LPn3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LPn3_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : INT_C_Pin INT1_Pin INT2_Pin INT3_Pin
                            INT4_Pin */
@@ -334,12 +312,23 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_SetPriority(EXTI4_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI4_IRQn);
 
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if(GPIO_Pin == GPIO_PIN_13) {
+	  vl53lmz_stop_ranging(&Sensor1Cfg);
+	  ranging = 0;
+  } else {
+      __NOP();
+  }
+}
 /* USER CODE END 4 */
 
 /**

@@ -32,6 +32,7 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "tof_lib.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -57,8 +58,9 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define FLEX_SPI_I2C_N_Pin GPIO_PIN_13
-#define FLEX_SPI_I2C_N_GPIO_Port GPIOC
+#define B1_Pin GPIO_PIN_13
+#define B1_GPIO_Port GPIOC
+#define B1_EXTI_IRQn EXTI15_10_IRQn
 #define LPn1_Pin GPIO_PIN_0
 #define LPn1_GPIO_Port GPIOC
 #define LPn2_Pin GPIO_PIN_1
