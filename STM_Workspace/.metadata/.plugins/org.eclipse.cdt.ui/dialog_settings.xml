@@ -15,4 +15,8 @@
 		<item key="size.width" value="497"/>
 		<item key="size.height" value="180"/>
 	</section>
+	<section name="RenameInformationPopup">
+	</section>
+	<section name="CRenameRefactoringInputPage">
+	</section>
 </section>

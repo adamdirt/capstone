@@ -46,7 +46,10 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 uint8_t ranging;
+uint8_t restart_state;
 extern VL53LMZ_Configuration Sensor1Cfg;
+//extern VL53LMZ_Configuration Sensor2Cfg;
+//extern VL53LMZ_Configuration* sensor_sema;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -323,8 +326,13 @@ static void MX_GPIO_Init(void)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   if(GPIO_Pin == GPIO_PIN_13) {
-	  vl53lmz_stop_ranging(&Sensor1Cfg);
-	  ranging = 0;
+	  if (ranging == 1){
+		  vl53lmz_stop_ranging(&Sensor1Cfg);
+//		  vl53lmz_stop_ranging(&Sensor1Cfg);
+//		  vl53lmz_stop_ranging(&Sensor2Cfg);
+		  ranging = 0;
+	  }
+	  restart_state = 1;
   } else {
       __NOP();
   }

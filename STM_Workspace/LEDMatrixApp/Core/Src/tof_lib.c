@@ -23,13 +23,15 @@ SEN_data_t sensor_data;
 
 uint16_t activeled_index;
 
-LED* LastLED; //deprecate?
+//LED* LastLED; //deprecate?
 LED LEDMatrix[MAX_QUADRANT_Y][MAX_QUADRANT_X];
 
-ActiveLEDFIFO activeLEDs;
+//ActiveLEDFIFO activeLEDs;
 
-led_color cur_color;
+//led_color cur_color;
 LED reset_command;
+
+brush my_brush;
 
 uint8_t init_tof(VL53LMZ_Configuration	*config){
 	uint8_t status = VL53LMZ_STATUS_OK;
@@ -49,7 +51,6 @@ uint8_t init_tof(VL53LMZ_Configuration	*config){
 
 uint8_t init_tracking(){
 	uint8_t status = 0;
-	uint8_t row, col;
 
 	status |= GW_init(&gest_predictor, &hand_tracker, &sensor_data);
 
@@ -58,60 +59,67 @@ uint8_t init_tracking(){
 	status |= GW_set_frequency(&gest_predictor, &hand_tracker, &sensor_data, 15);
 
 	//fortest
-//	status |= SEN_set_orientation(&sensor_data, 0);
-
-	for (row = 0; row < MAX_QUADRANT_Y; row++){
-		for (col = 0; col < MAX_QUADRANT_X; col++){
-			LEDMatrix[row][col].row = row;
-			LEDMatrix[row][col].column = col;
-			LEDMatrix[row][col].color = Black;
-			LEDMatrix[row][col].brightness = 0;
-
-//			set_led_color(&LEDMatrix[row][col], Black);
-		}
-	}
-	LastLED = &LEDMatrix[0][0];
-	cur_color = Blue;
-
-	activeLEDs.first = 0;
-	activeLEDs.last = 0;
-	activeLEDs.length = 0;
-
-	reset_command.row = 255;
-	reset_command.column = 255;
-	reset_command.color = Black;
-
-	send_led_data(&reset_command);
-
+	status |= SEN_set_orientation(&sensor_data, 4);
 	return status;
 }
 
-//void set_led_color(LED* led_to_change, led_color new_color){
-//	switch (new_color)
-//	{
-//	case Black:
-//		led_to_change->red = 0;
-//		led_to_change->green = 0;
-//		led_to_change->blue = 0;
-//		break;
-//	case Red:
-//		led_to_change->red = 255;
-//		led_to_change->green = 0;
-//		led_to_change->blue = 0;
-//		break;
-//	case Green:
-//		led_to_change->red = 0;
-//		led_to_change->green = 255;
-//		led_to_change->blue = 0;
-//		break;
-//	case Blue:
-//		led_to_change->red = 0;
-//		led_to_change->green = 0;
-//		led_to_change->blue = 255;
-//		break;
-//	}
-//	led_to_change->color = new_color;
-//}
+void init_matrix(){
+	my_brush.cur_led = &LEDMatrix[0][0];
+	my_brush.last_led = &LEDMatrix[0][0];
+
+	my_brush.cur_color = Red;
+	my_brush.last_color = Red;
+
+//	reset_command = {255, 255, Black, 0, 0, 0};
+	reset_command.row = 255;
+	reset_command.column = 255;
+	set_led_color(&reset_command, Black);
+	reset_command.color = Black;
+
+
+//	LEDMatrix[0][0].brightness = 255;
+	set_led_color(&LEDMatrix[0][0], my_brush.cur_color);
+
+	reset_matrix();
+
+	LED pack_command = {254, 254, Black, 0, 0, 0};
+
+	send_led_data(&pack_command);
+	HAL_Delay(500);
+}
+
+void set_led_color(LED* led_to_change, led_color new_color){
+	led_to_change->color = new_color;
+	switch (new_color)
+	{
+	case Black:
+		led_to_change->R = 0;
+		led_to_change->G = 0;
+		led_to_change->B = 0;
+		break;
+	case Red:
+		led_to_change->R = MAX_BRIGHTNESS;
+		led_to_change->G = 0;
+		led_to_change->B = 0;
+		break;
+	case Green:
+		led_to_change->R = 0;
+		led_to_change->G = MAX_BRIGHTNESS;
+		led_to_change->B = 0;
+		break;
+	case Blue:
+		led_to_change->R = 0;
+		led_to_change->G = 0;
+		led_to_change->B = MAX_BRIGHTNESS;
+		break;
+	case White:
+		led_to_change->R = MAX_BRIGHTNESS;
+		led_to_change->G = MAX_BRIGHTNESS;
+		led_to_change->B = MAX_BRIGHTNESS;
+		break;
+	}
+	led_to_change->color = new_color;
+}
 
 uint8_t send_led_data(LED* updated_LED){
 	uint8_t status = 0;
@@ -121,16 +129,18 @@ uint8_t send_led_data(LED* updated_LED){
 //	uint8_t data_buffer[5] = {updated_LED->row, updated_LED->column,
 //								4, 5, 10};
 	//todo update to do row col r g b
-	uint8_t rgb_buffer[3] = {updated_LED->color == Red ? updated_LED->brightness : 0,
-							updated_LED->color == Green ? updated_LED->brightness : 0,
-							updated_LED->color == Blue ? updated_LED->brightness : 0,
-	};
+//	uint8_t rgb_buffer[3] = {updated_LED->color == Red ? updated_LED->brightness : 0,
+//							updated_LED->color == Green ? updated_LED->brightness : 0,
+//							updated_LED->color == Blue ? updated_LED->brightness : 0,
+//	};
+
 
 	uint8_t data_buffer[5] = {updated_LED->row, updated_LED->column,
-								rgb_buffer[0], rgb_buffer[1], rgb_buffer[2]};
+								updated_LED->R, updated_LED->G, updated_LED->B};
+//								rgb_buffer[0], rgb_buffer[1], rgb_buffer[2]};
 
 	status |= HAL_I2C_Master_Transmit(&hi2c1, ARDUINO_I2C_ADDR, data_buffer, 5, 100);
-
+	HAL_Delay(5);
 	return status;
 }
 
@@ -193,7 +203,7 @@ void convertSingleSensorPos(int x, int y, int z, uint8_t *pos_buffer) {
 	//test
 
 	Xinterval *= 0.85;
-	Yinterval *= 0.85;
+	Yinterval *= 0.83;
 
 	int row = -1*(y/Yinterval);
 	int col = x/Xinterval;
@@ -215,12 +225,55 @@ void convertSingleSensorPos(int x, int y, int z, uint8_t *pos_buffer) {
 	pos_buffer[1] = (uint8_t) col;
 }
 
+//
+//uint8_t adamsConversion(float x, float y, uint8_t* pos_buffer){
+//	//todo ignore outside of box
+//	int ledx_mm, ledy_mm;
+//	uint8_t ledx_num, ledy_num; // col,
+//	uint8_t out_of_bounds;
+//
+//	ledx_mm = x + MATRIX_MM_WIDTH_DIV;
+//
+//		//bounds check
+//	out_of_bounds = (x < -MATRIX_MM_WIDTH_DIV || x > MATRIX_MM_WIDTH_DIV ||
+//				y < 0 || y > MATRIX_MM_HEIGHT);
+//
+//	ledy_mm = y - MATRIX_MM_HEIGHT;
+//	if (ledy_mm < 0) {ledy_mm = -ledy_mm;}
+//
+//	if (out_of_bounds) {return 1;}
+//	// (ledx,ledy) are coordinates with origin in top left, and +x and +y pointing right and down
+//	// now, convert to led
+//
+//	ledx_num = (uint8_t) (ledx_mm * LED_X_DIV);
+//	ledy_num = (uint8_t) (ledy_mm * LED_Y_DIV);
+//	// now, BOUNDS CHECKING PLEASE
+//
+//	if (ledx_num >= MATRIX_WIDTH){ledx_num = MATRIX_WIDTH - 1;}
+//	else if (ledx_num < 0){ledx_num = 0;}
+//
+//	if (ledy_num >= MATRIX_HEIGHT){ledy_num = MATRIX_HEIGHT - 1;}
+//	else if (ledy_num < 0){ledy_num = 0;}
+//
+//	// ok bye
+//	pos_buffer[0] = ledy_num; // ie row #
+//	pos_buffer[1] = ledx_num; // ie col #
+//
+//	return 0;
+//}
+
 
 void update_led_matrix(HT_hand_t* cur_hand, led_color new_color){
 	uint8_t led_index[2];
 	uint8_t row, col;
 
+//	uint8_t out_of_bounds;
+
 	convertSingleSensorPos(cur_hand->hand_x, cur_hand->hand_y, cur_hand->hand_z, led_index);
+//	out_of_bounds = adamsConversion(cur_hand->hand_x, cur_hand->hand_y, led_index);
+
+//	if (out_of_bounds){return;}
+
 	row = led_index[0];
 	col = led_index[1];
 
@@ -228,54 +281,46 @@ void update_led_matrix(HT_hand_t* cur_hand, led_color new_color){
 //	LastLED = &LEDMatrix[row][col];
 
 	if (LEDMatrix[row][col].color != new_color){ //new led
-//		set_led_color(&LEDMatrix[row][col], new_color);
-//		FIFO_add(&activeLEDs, &LEDMatrix[row][col]);
-		LEDMatrix[row][col].color = new_color;
-		LEDMatrix[row][col].brightness = 255;
-		send_led_data(&LEDMatrix[row][col]);
+		if (row > 1 && col > 1){
+//			set_led_color(&LEDMatrix[row][col], new_color);
+//			FIFO_add(&activeLEDs, &LEDMatrix[row][col]);
+			set_led_color(&LEDMatrix[row][col], new_color);
+//			LEDMatrix[row][col].color = new_color;
+//			LEDMatrix[row][col].brightness = 255;
+			send_led_data(&LEDMatrix[row][col]);
+		}
 	}
 }
 
-void FIFO_add(ActiveLEDFIFO* fifo, LED* new_led){
-	if (++(fifo->last) == NUM_LEDS){ // get and increment last index, check if at max, reset if true
-		fifo->last = 0;
-	}
-	fifo->active[fifo->last] = new_led; // last should be between 0 and num_led-1
-	fifo->length++;
-}
-
-void FIFO_pop(ActiveLEDFIFO* fifo){
-	if(++(fifo->first) == NUM_LEDS){ // get and increment first index, check if at max, reset if true
-		fifo->first = 0;
-	}
-	fifo->length--;
-}
-
-void do_decay(){
-	if (activeLEDs.length == 0) {return;}
-
-	uint16_t i = activeLEDs.first;
-
-	while (i != activeLEDs.last){
-		activeLEDs.active[i]->brightness-=3;
-		send_led_data(activeLEDs.active[i]);
-		if (++i == NUM_LEDS){i = 0;}
-	}
-
-	if (activeLEDs.active[activeLEDs.first]->brightness < 20){
-		activeLEDs.active[activeLEDs.first]->color = Black;
-		activeLEDs.active[activeLEDs.first]->brightness = 0;
-		send_led_data(activeLEDs.active[activeLEDs.first]);
-		FIFO_pop(&activeLEDs);
-	}
-
-}
 
 void reset_matrix(){
+	uint8_t row, col;
 	send_led_data(&reset_command);
 	gest_predictor.gesture.label = GW_NONE;
-	HAL_Delay(50);
+	HAL_Delay(100);
 
+	for (row = 0; row < MAX_QUADRANT_Y; row++){
+			for (col = 0; col < MAX_QUADRANT_X; col++){
+				LEDMatrix[row][col].row = row;
+				LEDMatrix[row][col].column = col;
+//				if((row == 0 && col == 1) || (row == 1 && col == 0) || (row == 1 && col == 1)){
+//					LEDMatrix[row][col].R = MAX_BRIGHTNESS;
+//					LEDMatrix[row][col].G = MAX_BRIGHTNESS;
+//					LEDMatrix[row][col].B = MAX_BRIGHTNESS;
+//					send_led_data(&LEDMatrix[row][col]);
+//					continue;
+//				}
+				set_led_color(&LEDMatrix[row][col], Black);
+//				LEDMatrix[row][col].color = Black;
+//				LEDMatrix[row][col].brightness = 0;
+			}
+	}
+	set_led_color(&LEDMatrix[0][1], White);
+	set_led_color(&LEDMatrix[1][0], White);
+	set_led_color(&LEDMatrix[1][1], White);
+	send_led_data(&LEDMatrix[0][1]);
+	send_led_data(&LEDMatrix[1][0]);
+	send_led_data(&LEDMatrix[1][1]);
 }
 
 uint8_t matrix_app_main(){
@@ -287,6 +332,8 @@ uint8_t matrix_app_main(){
     status |= init_tof(&Sensor1Cfg);
 
     status |= init_tracking();
+
+    init_matrix();
 
 	status |= vl53lmz_start_ranging(&Sensor1Cfg);
 	ranging = 1;
@@ -300,17 +347,20 @@ uint8_t matrix_app_main(){
 		status |= GW_run(&gest_predictor, &hand_tracker, &sensor_data);
 //
 		if (gest_predictor.gesture.label == GW_TOWARD){ // brush change
-			if (++cur_color == 4){cur_color = 0;}
+			if (++my_brush.cur_color == 4){my_brush.cur_color = 0;}
 			gest_predictor.gesture.label = GW_NONE;
 		}
-//		else if (gest_predictor.gesture.label == GW_UP){
-//			reset_matrix();
-//			continue;
-//		}
+		else if (gest_predictor.gesture.label == GW_UP){
+			reset_matrix();
+			gest_predictor.gesture.label = GW_NONE;
+			continue;
+		}
 //		if (ranging % 3 == 0) {do_decay();}
 //		do_decay();
 		if(hand_tracker.hand.found && hand_tracker.hand.hand_z < 600){
-			update_led_matrix(&hand_tracker.hand, cur_color);
+			update_led_matrix(&hand_tracker.hand, my_brush.cur_color);
+			set_led_color(&LEDMatrix[0][0], my_brush.cur_color);
+			send_led_data(&LEDMatrix[0][0]);
     		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
 
 //Level control attempt

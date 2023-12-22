@@ -1,17 +1,10 @@
-14:08:22 **** Incremental Build of configuration Debug for project LEDMatrixApp ****
+13:36:20 **** Incremental Build of configuration Debug for project LEDMatrixApp ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/tof_lib.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/VL53LMZ_ULD_API/inc" -I"/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/Platform" -I"/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/GesturesMZ" -I"/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/apps_layer" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tof_lib.d" -MT"Core/Src/tof_lib.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tof_lib.o"
-arm-none-eabi-gcc -o "LEDMatrixApp.elf" @"objects.list"  -lGesturesMZ -mcpu=cortex-m4 -T"/home/adam/Documents/capstone/CaptstoneRepo/capstone/STM_Workspace/LEDMatrixApp/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LEDMatrixApp.map" -Wl,--gc-sections -static -L../GesturesMZ --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: LEDMatrixApp.elf
- 
 arm-none-eabi-size   LEDMatrixApp.elf 
-arm-none-eabi-objdump -h -S  LEDMatrixApp.elf  > "LEDMatrixApp.list"
    text	   data	    bss	    dec	    hex	filename
- 135348	    136	  23232	 158716	  26bfc	LEDMatrixApp.elf
+ 135748	    136	  22232	 158116	  269a4	LEDMatrixApp.elf
 Finished building: default.size.stdout
  
-Finished building: LEDMatrixApp.list
- 
 
-14:08:22 Build Finished. 0 errors, 0 warnings. (took 376ms)
+13:36:21 Build Finished. 0 errors, 0 warnings. (took 172ms)
 
